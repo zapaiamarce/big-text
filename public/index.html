@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Big Text</title>
+    <link
+          href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400&display=swap"
+          rel="stylesheet"
+        ></link>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body,
+      html {
+        height: 100%;
+        margin: 0;
+        overflow: auto;
+        background-color: #11101a;
+        color: white;
+        font-family:"JetBrains Mono", Menlo, Monaco, Consolas, "Andale Mono", "Ubuntu Mono", "Courier New", monospace;
+      }
+      .box {
+        height: 100%;
+        padding: 36px;
+        font-size: 36px;
+        outline: none;
+      }
+      .box::selection {
+        background: #fff;
+        color: #a873f7;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box" contenteditable="true">...</div>
+  </body>
+</html>
