@@ -25,7 +25,7 @@
       .box {
         height: 100%;
         padding: 36px;
-        font-size: 36px;
+        font-size: 60px;
         outline: none;
       }
       .box::selection {
@@ -36,5 +36,21 @@
   </head>
   <body>
     <div class="box" contenteditable="true">...</div>
+    <script>
+      // when dom is ready
+      document.addEventListener("DOMContentLoaded", () => {
+        const LOCAL_ITEM_NAME = "last";
+        // recorver data from localstorage and put it on box
+        const box = document.querySelector(".box");
+        const data = localStorage.getItem(LOCAL_ITEM_NAME);
+        if (data) {
+          box.innerHTML = data;
+        }
+        // also save any change to box to localstorage
+        box.addEventListener("input", () => {
+          localStorage.setItem(LOCAL_ITEM_NAME, box.innerHTML);
+        });
+      });
+    </script>
   </body>
 </html>
